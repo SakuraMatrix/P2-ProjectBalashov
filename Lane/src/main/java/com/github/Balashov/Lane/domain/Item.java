@@ -1,4 +1,4 @@
-package com.github.Balashov.Lane.model;
+package com.github.Balashov.Lane.domain;
 
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.Column;
@@ -16,9 +16,9 @@ public class Item implements Serializable {
     @PrimaryKey("item_id")
     private int id = new Random().nextInt(99999);
     @Column
-    private String name = "New item";
+    private String name = "New Item";
     @Column
-    private double price = 0.00;
+    private double price = -1;
     @Column
     private Set<String> category = new HashSet<>();
 

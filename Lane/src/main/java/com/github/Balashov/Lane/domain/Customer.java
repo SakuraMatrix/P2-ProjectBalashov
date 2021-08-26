@@ -1,4 +1,4 @@
-package com.github.Balashov.Lane.model;
+package com.github.Balashov.Lane.domain;
 
 import org.springframework.data.cassandra.core.mapping.Table;
 
@@ -11,7 +11,5 @@ public class Customer {
 
     private String name = "";
     private double walletBalance = 0.00;
-
-
 
 }
