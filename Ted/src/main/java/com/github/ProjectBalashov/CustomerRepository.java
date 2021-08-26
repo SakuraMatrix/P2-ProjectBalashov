@@ -19,7 +19,7 @@ import java.time.LocalDate;
 import java.util.Random;
 
 import static com.datastax.oss.driver.api.querybuilder.QueryBuilder.literal;
-
+//getting weird error
 public class CustomerRepository {
     CqlSession session;
     Logger log;
