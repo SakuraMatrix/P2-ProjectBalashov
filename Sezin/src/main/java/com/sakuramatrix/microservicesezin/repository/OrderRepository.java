@@ -30,7 +30,7 @@ import reactor.core.publisher.Mono;
         }
 
         public Order create(Order order) {log.info("Creating an order");
-            SimpleStatement stmt = SimpleStatement.builder("INSERT INTO scifi.orders (customerId,itemId,itemName,itemPrice,itemCategory,numberOfOrders) values (?,?,?,?,?)")
+            SimpleStatement stmt = SimpleStatement.builder("INSERT INTO scifi.orders (customerId,itemId,itemName,itemPrice,itemCategory) values (?,?,?,?,?)")
                     .addPositionalValues(order.getCustomerId(), order.getItemId(),order.getItemName(),order.getItemPrice(),order.getItemCategory())
                     .build();
             Flux.from(session.executeReactive(stmt)).subscribe();
