@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.net.URI;
-
 @RestController
 @RequestMapping("/item")
 public class ItemController {
@@ -31,9 +29,16 @@ public class ItemController {
         return itemRepository.findByCategory(category);
     }
 
+    @GetMapping("/filter/byName/{name}")
+    public Flux<Item> byName(@PathVariable String name) {
+        return itemRepository.findByName(name);
+    }
+
     @PostMapping("/create")
     public Mono<Item> create(@RequestBody Item item) {
         return itemRepository.save(item);
     }
+
+
 
 }
