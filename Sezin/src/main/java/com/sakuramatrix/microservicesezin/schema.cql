@@ -1,6 +1,6 @@
 CREATE KEYSPACE IF NOT EXIST scifi WITH REPLICATION={'class':'SimpleStrategy','replication_factor'=1};
   USE scifi;
-CREATE TABLE IF NOT EXIST customers(
+CREATE TABLE IF NOT EXIST orders(
   customerId int PRIMARY KEY,
   itemId int,
   itemName text,
