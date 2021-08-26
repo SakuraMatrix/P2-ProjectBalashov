@@ -4,7 +4,7 @@ This is the Item Database Service. In charge of anything item related.
 
 ## Endpoints
 - GET "/item": Returns all items
-  ![Alt text](../img/get all.png)
+  ![Alt text](../img/get%20all.png)
 - GET "/item/filter/byId/{id}": Returns the item with corresponding ID
   ![Alt text](../img/get by id.png)
 - GET "/item/filter/byCategory/{category}": Returns all items with the specified category
