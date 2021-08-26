@@ -36,6 +36,7 @@ public class Item implements Serializable {
         this(item_id, name, price, new HashSet<>(Arrays.asList(category)));
     }
 
+
     public int getId() {
         return id;
     }
