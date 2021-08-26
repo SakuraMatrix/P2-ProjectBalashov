@@ -10,7 +10,6 @@ import reactor.core.publisher.Flux;
 @Repository
 public interface ItemRepository extends ReactiveCassandraRepository<Item, Integer> {
 
-    @AllowFiltering
-    @Query(value = "SELECT * FROM project_two.items WHERE category CONTAINS ? ALLOW FILTERING", allowFiltering = true)
+    @Query(value = "SELECT * FROM project_two.items WHERE category CONTAINS ?0 ALLOW FILTERING", allowFiltering = true)
     Flux<Item> findByCategory(String category);
 }

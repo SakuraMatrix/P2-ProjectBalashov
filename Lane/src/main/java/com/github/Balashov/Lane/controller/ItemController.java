@@ -2,11 +2,8 @@ package com.github.Balashov.Lane.controller;
 
 import com.github.Balashov.Lane.model.Item;
 import com.github.Balashov.Lane.repository.ItemRepository;
-import com.github.Balashov.Lane.util.IntegerUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.reactive.function.server.ServerRequest;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -29,8 +26,13 @@ public class ItemController {
         return itemRepository.findById(id);
     }
 
+    @GetMapping("/filter/byCategory/{category}")
+    public Flux<Item> byCategory(@PathVariable String category) {
+        return itemRepository.findByCategory(category);
+    }
+
     @PostMapping("/create")
-    public Mono<Item> create(Item item) {
+    public Mono<Item> create(@RequestBody Item item) {
         return itemRepository.save(item);
     }
 
