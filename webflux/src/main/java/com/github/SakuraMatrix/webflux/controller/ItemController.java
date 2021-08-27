@@ -1,42 +1,33 @@
-package com.github.SakuraMatrix.webflux.controller;
+package java.com.github.SakuraMatrix.webflux.controller;
 
-import com.github.SakuraMatrix.webflux.domain.Item;
-import com.github.SakuraMatrix.webflux.service.ItemService;
-import org.springframework.web.bind.annotation.*;
-import reactor.core.publisher.Flux;
+import org.springframework.stereotype.Component;
+import org.springframework.web.reactive.function.server.ServerRequest;
+import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
-@RestController
-@RequestMapping(value = "/items")
+import java.net.URI;
+
+@Component
 public class ItemController {
-  private final ItemService itemService;
+  private ItemRepository itemRepo;
 
-  public ItemController(ItemService itemService) {
-    this.itemService = itemService;
+  public ItemController(ItemRepository itemRepo){
+    this.itemRepo = itemRepo;
   }
 
-  @GetMapping("")
-  public Flux<Item> getAll() {
-    return itemService.getAll();
+  public Mono<ServerResponse> all(ServerRequest req){
+    return ServerResponse.ok().body(this.itemRepo.findAll(), Item.Class);
   }
 
-  @GetMapping("/{id}")
-  public Mono<Item> get(@PathVariable("id") int id) {
-    return itemService.get(id);
+  public Mono<ServerResponse> get(ServerRequest req){
+    return this.itemRepo.findById(id.fromString(req.pathVariable("id")))
+    .flatMap(item -> ServerResponse.ok().body(Mono.just(item), Item.class))
+    .switchIfEmpty(ServerResponse.notFound().build());
   }
 
-  @GetMapping("/{category}")
-  public Flux<Item> get(@PathVariable("category") String category) {
-    return itemService.get(category);
-  }
-
-  @GetMapping("/{price}")
-  public Flux<Item> get(@PathVariable("price") double price) {
-    return itemService.get(price);
-  }
-
-  @PostMapping("")
-  public Mono<Item> create(@RequestBody Item item) {
-    return itemService.create(item);
+  public Mono<ServerResponse> create(ServerRequest req){
+    return req.bodyToMono(Item.class)
+      .flatMap(item -> this.itemRepo.save(item))
+      .flatMap(item -> ServerResponse.created(URI.create("/items/" + item.getId())).build());
   }
 }
