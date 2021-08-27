@@ -1,5 +1,7 @@
 package com.github.Balashov.Lane.domain;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.netty.buffer.Unpooled;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
@@ -13,11 +15,11 @@ import java.util.*;
 public class Item implements Serializable {
 
     @PrimaryKeyColumn(name = "item_id", type = PrimaryKeyType.PARTITIONED)
-    @PrimaryKey("item_id")
+    @PrimaryKey("item_id") //passed in the column name from the table
     private int id = new Random().nextInt(99999);
-    @Column
+    @Column //table's column name matches the field so don't need to specify it
     private String name = "New Item";
-    @Column
+    @Column("price") //this would be how you specify the columns
     private double price = -1;
     @Column
     private Set<String> category = new HashSet<>();
@@ -91,4 +93,16 @@ public class Item implements Serializable {
                 ", category=" + category +
                 '}';
     }
+
+    public static String toJSON(Item item) {
+        ObjectMapper mapper = new ObjectMapper();
+
+        try {
+            return mapper.writeValueAsString(item);
+        } catch (Exception e) {
+            return "";
+        }
+    }
+
+
 }
