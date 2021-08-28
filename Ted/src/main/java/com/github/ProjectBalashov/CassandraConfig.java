@@ -11,7 +11,7 @@ import org.springframework.data.cassandra.repository.config.EnableReactiveCassan
 public class CassandraConfig extends AbstractCassandraConfiguration {
 
     @Value("${spring.data.cassandra.keyspace-name}")
-    private String keyspace = "project_two";
+    private String keyspace = "scifi";
 
     @Value("${spring.data.cassandra.contact-points}")
     private String contactPoints = "localhost";
