@@ -19,7 +19,8 @@ public class Scifi {
 
 	@GetMapping("/")
 	public Mono<String> eureka() {
+
 		return Mono.just("Experimenting with Eureka for Project 2!");
-	}
+
 
 }

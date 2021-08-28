@@ -11,9 +11,7 @@
     </encoder>
   </appender>
 
-
   <logger name="main" />
-
 
   <root level="debug">
     <appender-ref ref="FILE" />

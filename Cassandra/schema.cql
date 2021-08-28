@@ -2,21 +2,17 @@ CREATE KEYSPACE IF NOT EXISTS scifi WITH replication = {'class': 'SimpleStrategy
 
 USE scifi;
 
-<<<<<<< HEAD
-CREATE TABLE IF NOT EXISTS scifi.customer (
-=======
 CREATE TABLE IF NOT EXISTS customers (
->>>>>>> 2800e13e0c49df3a448c54addc78368f36229003
-    id int,
+    customerId int,
     balance double,
-    PRIMARY KEY (id)
+    PRIMARY KEY (customerId)
 );
 
-CREATE TABLE IF NOT EXISTS scifi.customer (
-    item_id INT,
-    name TEXT,
+CREATE TABLE IF NOT EXISTS items (
+    itemId INT,
+    itemName TEXT,
     price DOUBLE,
     category SET<TEXT>,
-    PRIMARY KEY (item_id)
+    PRIMARY KEY (itemId)
 );
 

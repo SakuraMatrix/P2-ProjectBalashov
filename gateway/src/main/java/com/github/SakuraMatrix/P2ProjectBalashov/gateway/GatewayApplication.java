@@ -20,7 +20,7 @@ public class GatewayApplication {
 	return builder.routes()
 	.route(p -> p
 		.path("/")
-		.uri("lb://LanChi"))
+		.uri("lb://SciFi"))
 		.build();
 	}
 
