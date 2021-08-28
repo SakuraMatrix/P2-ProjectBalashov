@@ -11,20 +11,9 @@ import java.net.URISyntaxException;
 
 @SpringBootApplication
 public class ScifiApplication {
+        public static void main(String[] args) {
+                SpringApplication.run(ScifiApplication.class, args);
 
-    public static void main(String[] args) throws URISyntaxException {
-        SpringApplication.run(ScifiApplication.class, args);
-
-        Logger log= LoggerFactory.getLogger(ScifiApplication.class);
-        log.info("Sci-Fi app starts");
-        Netty();
-    }
-
-    private static void Netty() throws URISyntaxException {
-        try (AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class)) {
-
-            applicationContext.getBean(HttpServer.class).bindNow();
         }
-    }
 }
 

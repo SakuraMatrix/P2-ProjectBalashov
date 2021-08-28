@@ -1,4 +1,4 @@
-package com.sakuramatrix.microservicesezin;
+package com.sakuramatrix.microservicesezin.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.config.EnableWebFlux;
