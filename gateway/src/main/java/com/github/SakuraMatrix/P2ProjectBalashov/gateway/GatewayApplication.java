@@ -18,9 +18,8 @@ public class GatewayApplication {
 	@Bean
 	public RouteLocator myRoutes(RouteLocatorBuilder builder) {
 	return builder.routes()
-	.route(p -> p
-		.path("/")
-		.uri("lb://SciFi"))
+	.route(p -> p.path("/").uri("lb://SciFi"))
+	.route(p -> p.path("/cart").uri("lb://cart"))
 		.build();
 	}
 
