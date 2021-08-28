@@ -9,10 +9,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class HtmlController {
 
   @GetMapping("/greeting")
-  public String greeting(@RequestParam(name = "name", required = false, defaultValue = "World") String name,
+  public String greeting(@RequestParam(name = "name", required = false, defaultValue = "Team%20Balashov!") String name,
       Model model) {
     model.addAttribute("name", name);
     return "greeting";
+  }
+
+  @GetMapping("/cart")
+  public String showCart() {
+    return "cart.html";
   }
 
 }
