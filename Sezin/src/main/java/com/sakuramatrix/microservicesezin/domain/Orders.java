@@ -1,30 +1,27 @@
 package com.sakuramatrix.microservicesezin.domain;
 
-import jdk.jfr.DataAmount;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.core.mapping.Table;
-
-import java.util.Objects;
 import java.util.Random;
 
 @Table
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Orders {
+public class Orders  {
     @PrimaryKeyColumn(name = "customer_id", type = PrimaryKeyType.PARTITIONED)
     @PrimaryKey("customer_id")
-    private int id = new Random().nextInt(99999);
+    private @Getter @Setter int id = new Random().nextInt(99999);
+
     @Column
-    private int item_id;
+    private @Getter @Setter int item_id;
     @Column
-    private double price;
+    private @Getter @Setter double price;
+
 }
 
 
