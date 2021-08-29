@@ -1,4 +1,4 @@
-package com.github.SakuraMatrix.P2ProjectBalashov.html;
+package com.github.SakuraMatrix.P2ProjectBalashov.htmlServer;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

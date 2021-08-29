@@ -11,17 +11,18 @@
     <nav>
       <ul class="pagination">
         <li class="page-item">
-          <a class="page-link minusButton" href="" th:itemId="${itemId}"><b> - </b></a>
+          <a class="page-link minusButton" href="" th:pid="${itemId}"><b> - </b></a>
         </li>
         <li class="page-item">
           <input type="text" th:value="${qtyValue}" class="form-control text-center" onkeydown="return false;" style="max-width: 55px" th:id="'quantity' + ${itemId}" />
         </li>
         <li class="page-item">
-          <a class="page-link plusButton" href="" th:itemId="${itemId}"><b> + </b></a>
+          <a class="page-link plusButton" href="" th:pid="${itemId}"><b> + </b></a>
         </li>
       </ul>
     </nav>
 
   </div>
+  <script th:src="@{/js/quantity.js}"></script>
 </body>
 </html>

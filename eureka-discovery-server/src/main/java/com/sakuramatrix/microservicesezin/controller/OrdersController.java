@@ -13,19 +13,19 @@ import reactor.core.publisher.Flux;
 @RequestMapping("/orders")
 public class OrdersController {
 
-      @Autowired
-      private OrdersRepository ordersRepository;
+        @Autowired
+        private OrdersRepository ordersRepository;
 
 
-      @GetMapping("/{customer_id}")
-      public Flux<Orders> getById(@PathVariable int customer_id){
-              return ordersRepository.findById(customer_id);
-      }
+        @GetMapping("/{customer_id}")
+        public Flux<Orders> getById(@PathVariable int customer_id){
+                return ordersRepository.findById(customer_id);
+        }
 
-      @GetMapping("/all")
-      public Flux<Orders> getAllOrders(){
-              return  ordersRepository.findAll();
-      }
+        @GetMapping("/all")
+        public Flux<Orders> getAllOrders(){
+                return ordersRepository.findAll();
+        }
 
         }
 
