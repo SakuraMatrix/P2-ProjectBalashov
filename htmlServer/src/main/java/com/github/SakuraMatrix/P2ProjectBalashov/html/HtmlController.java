@@ -16,9 +16,24 @@ public class HtmlController {
   }
 
   @GetMapping("/cart")
-  public String showCart() {
+  public String showCart(Model model) {
+
+    Customer customer = new Customer();
+    List<CartItem> cartItems = cartService.listCartItems(customer);
+
+    model.addAttribute("cartItems", cartItems);
+    model.addAttribute("pageTitle", "Shopping Cart");
     return "cart";
   }
-
+  
+  // @Configuration
+  // public class StaticResourceConfiguration extends WebMvcConfigurerAdapter {      
+  //     @Override
+  //     public void addResourceHandlers(ResourceHandlerRegistry registry) {
+  //         registry.addResourceHandler("/images/**")
+  //         .addResourceLocations("file:ext-resources/")
+  //         .setCachePeriod(0);
+  //     }
+  // }
 }
 
