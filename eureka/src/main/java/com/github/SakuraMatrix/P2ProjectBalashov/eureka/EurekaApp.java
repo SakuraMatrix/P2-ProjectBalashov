@@ -1,4 +1,4 @@
-package com.github.SakuraMatrix.P2ProjectBalashov.eurekadiscoveryserver;
+package com.github.SakuraMatrix.P2ProjectBalashov.eureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,10 +7,8 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 @SpringBootApplication
 @EnableEurekaServer
 
-public class EurekaDiscoveryServerApplication {
-
+public class EurekaApp {
 	public static void main(String[] args) {
-		SpringApplication.run(EurekaDiscoveryServerApplication.class, args);
+		SpringApplication.run(EurekaApp.class, args);
 	}
-
 }

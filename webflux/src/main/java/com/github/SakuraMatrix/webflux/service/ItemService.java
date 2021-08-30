@@ -1,36 +1,37 @@
-package com.SakuraMatrix.webflux.service;
+// package com.github.SakuraMatrix.webflux.service;
 
-import com.github.SakuraMatrix.webflux.domain.Item;
-import com.github.SakuraMatrix.webflux.repository.ItemRepository;
-import org.springframework.stereotype.Service;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
+// import com.github.SakuraMatrix.webflux.domain.Item;
+// import com.github.SakuraMatrix.webflux.repository.ItemRepository;
 
-@Service
-public class ItemService {
-  private final ItemRepository itemRepo;
+// import org.springframework.stereotype.Service;
+// import reactor.core.publisher.Flux;
+// import reactor.core.publisher.Mono;
 
-  public ItemService(ItemRepository itemRepo) {
-    this.itemRepo = itemRepo;
-  }
+// @Service
+// public class ItemService {
+//   private final ItemRepository itemRepo;
 
-  public Flux<Item> getAll() {
-    return itemRepo.findAll();
-  }
+//   public ItemService(ItemRepository itemRepo) {
+//     this.itemRepo = itemRepo;
+//   }
 
-  public Mono<Item> get(int id) {
-    return itemRepo.findById(id);
-  }
+//   public Flux<Item> getAll() {
+//     return itemRepo.findAll();
+//   }
 
-  public Flux<Item> getByCategory(String category) {
-    return itemRepo.findByCategory(category);
-  }
+//   public Mono<Item> get(int id) {
+//     return itemRepo.findById(id);
+//   }
 
-  public Flux<Item> getByPrice(double price) {
-    return itemRepo.findByPrice(price);
-  }
+//   public Flux<Item> getByCategory(String category) {
+//     return itemRepo.findByCategory(category);
+//   }
 
-  public Mono<Item> create(Item item) {
-    return itemRepo.create(item);
-  }
-}
+//   public Flux<Item> getByPrice(double price) {
+//     return itemRepo.findByPrice(price);
+//   }
+
+//   public Mono<Item> create(Item item) {
+//     return itemRepo.create(item);
+//   }
+// }
