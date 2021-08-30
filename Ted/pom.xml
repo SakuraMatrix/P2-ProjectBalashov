@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.github.Balashov</groupId>
-    <artifactId>Lane</artifactId>
+    <artifactId>Ted</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Lane</name>
+    <name>Ted</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>11</java.version>
