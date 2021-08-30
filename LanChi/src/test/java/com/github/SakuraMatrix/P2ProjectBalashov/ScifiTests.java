@@ -1,13 +1,13 @@
-package com.github.SakuraMatrix.P2ProjectBalashov;
+// package com.github.SakuraMatrix.P2ProjectBalashov;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class P2ProjectBalashovApplicationTests {
+// @SpringBootTest
+// class P2ProjectBalashovApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+// 	@Test
+// 	void contextLoads() {
+// 	}
 
-}
+// }
