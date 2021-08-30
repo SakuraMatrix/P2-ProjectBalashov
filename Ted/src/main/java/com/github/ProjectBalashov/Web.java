@@ -3,13 +3,19 @@ package com.github.ProjectBalashov;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import reactor.netty.DisposableServer;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
 public class Web{
     public static void main(String[] args){
-
+        SpringApplication.run(Web.class, args);
     }
     static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
     static ByteBuf toByteBuf(Object o) {
