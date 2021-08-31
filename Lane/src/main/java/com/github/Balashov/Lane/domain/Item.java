@@ -38,7 +38,6 @@ public class Item implements Serializable {
         this(item_id, name, price, new HashSet<>(Arrays.asList(category)));
     }
 
-
     public int getId() {
         return id;
     }
@@ -70,6 +69,8 @@ public class Item implements Serializable {
     public void setCategory(Set<String> category) {
         this.category = category;
     }
+
+
 
     @Override
     public boolean equals(Object o) {
