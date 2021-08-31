@@ -9,7 +9,7 @@ import java.util.Objects;
 
 @Table("items")
 public class Item {
-  @PrimaryKey
+  @PrimaryKeyColumn(name="id", type=PrimaryKeyType.PARTITIONED)
   private int id;
   private String name;
   private double price;
