@@ -1,4 +1,4 @@
-Feature: demo
+Feature: user
 
 Scenario: Testing valid GET endpoint
   Given url 'http://localhost:8097/user/get'

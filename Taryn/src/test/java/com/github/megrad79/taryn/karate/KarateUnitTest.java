@@ -2,6 +2,7 @@ package com.github.megrad79.taryn.karate;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
+import com.github.tomakehurst.wiremock.core.WireMockConfiguration.*;
 import com.intuit.karate.junit4.Karate;
 import cucumber.api.CucumberOptions;
 import org.junit.AfterClass;
@@ -11,7 +12,8 @@ import org.junit.runner.RunWith;
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 
 @RunWith(Karate.class)
-@CucumberOptions(features = "classpath:karate")
+//@CucumberOptions(features = "classpath:karate")
+@CucumberOptions(features = "src/test/resources")
 public class KarateUnitTest {
     private static WireMockServer wireMockServer
             = new WireMockServer(WireMockConfiguration.wireMockConfig().port(8097));
