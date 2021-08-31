@@ -1,4 +1,4 @@
-package com.github.ProjectBalashov;
+/*package com.github.ProjectBalashov;
 
 import ch.qos.logback.classic.Logger;
 import com.datastax.oss.driver.api.core.CqlSession;
@@ -47,7 +47,7 @@ public class CustomerConfig {
     @Bean
 
     public DisposableServer disposableServer() {
-        CustomerRepository db = new CustomerRepository(session(), logger());
+        CustomerService db = new CustomerService(session(), logger());
         return HttpServer.create()
                 .port(8080)
                 .route(routes ->
@@ -74,4 +74,4 @@ public class CustomerConfig {
         }
         return ByteBufAllocator.DEFAULT.buffer().writeBytes(out.toByteArray());
     }
-}
+}*/

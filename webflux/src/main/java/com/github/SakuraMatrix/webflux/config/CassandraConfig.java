@@ -1,5 +1,6 @@
 package java.com.github.SakuraMatrix.webflux.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.cassandra.config.AbstractReactiveCassandraConfiguration;
 import org.springframework.data.cassandra.config.SchemaAction;
@@ -18,7 +19,7 @@ public class CassandraConfig extends AbstractReactiveCassandraConfiguration {
   private String keyspace;
 
   @Value("contactpoints")
-  private String localhost;
+  private String contactpoints;
 
   @Override
   protected String getKeyspaceName() {

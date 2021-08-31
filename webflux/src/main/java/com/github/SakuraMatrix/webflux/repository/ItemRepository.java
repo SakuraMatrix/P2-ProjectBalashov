@@ -11,4 +11,3 @@ import reactor.core.publisher.Mono;
 @Repository
 public interface ItemRepository extends ReactiveCassandraRepository<Item, Integer> {
 }
-

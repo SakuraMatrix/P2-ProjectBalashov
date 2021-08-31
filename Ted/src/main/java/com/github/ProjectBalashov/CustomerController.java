@@ -34,16 +34,13 @@ public class CustomerController {
         return customerService.createCustomer(customer);
     }
 
-    @PutMapping("/deposit/{customer}/{amt}")
-    public Mono<Boolean> deposit(@PathVariable int id, @RequestBody double amt) {
-        return customerService.deposit(id, amt).log();
+    @PutMapping("/deposit/{customer}")
+    public Mono<Boolean> deposit(@PathVariable int customer, @RequestBody double amt) {
+        return customerService.deposit(customer, amt).log();
     }
 
-    @PutMapping("/withdraw/{customer}/{amt}")
-    public Mono<Boolean> withdraw(@PathVariable int id, @RequestBody double amt) {
-        return customerService.deposit(id, amt).log();
+    @PutMapping("/withdraw/{customer}")
+    public Mono<Boolean> withdraw(@PathVariable int customer, @RequestBody double amt) {
+        return customerService.withdraw(customer, amt).log();
     }
-
-
-
 }

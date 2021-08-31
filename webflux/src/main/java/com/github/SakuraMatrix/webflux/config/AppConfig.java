@@ -14,20 +14,30 @@ import org.springframework.http.server.reactive.HttpHandler;
 import org.springframework.http.server.reactive.ReactorHttpHandlerAdapter;
 import org.springframework.web.server.adapter.WebHttpHandlerBuilder;
 import reactor.netty.http.server.HttpServer;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @ComponentScan
-@PropertySources("classpath: application.properties")
+@PropertySource("classpath: application.properties")
 public class AppConfig {
   @Value("server.port")
   String port;
   @Autowired
   ItemService itemService;
 
+//   @Bean
+//   public HttpServer httpServer(ApplicationContext appCon) {
+//     HttpHandler http = WebHttpHandlerBuilder.applicationContext(appCon).build();
+//     ReactorHttpHandlerAdapter adapter = new ReactorHttpHandlerAdapter(http);
+//     return HttpServer.create().port(Integer.parse(this.port)).handle(adapter);
+//   }
+// }
+
   @Bean
   public HttpServer httpServer(ApplicationContext appCon) {
     HttpHandler http = WebHttpHandlerBuilder.applicationContext(appCon).build();
     ReactorHttpHandlerAdapter adapter = new ReactorHttpHandlerAdapter(http);
-    return HttpServer.create().port(Integer.parse(this.port)).handle(adapter);
+    return HttpServer.create().port(8080).handle(adapter);
   }
 }
