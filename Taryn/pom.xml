@@ -66,6 +66,15 @@
             <artifactId>karate-junit4</artifactId>
             <version>0.6.0</version>
         </dependency>
+
+        <!-- WireMock (can remove later after demo -->
+        <dependency>
+            <groupId>com.github.tomakehurst</groupId>
+            <artifactId>wiremock</artifactId>
+            <version>1.58</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- -->
     </dependencies>
 
     <build>
