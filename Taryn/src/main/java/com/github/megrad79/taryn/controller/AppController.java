@@ -1,7 +1,7 @@
-package com.github.megrad79.tnj_microservice.controller;
+package com.github.megrad79.taryn.controller;
 
-import com.github.megrad79.tnj_microservice.domain.App;
-import com.github.megrad79.tnj_microservice.service.AppService;
+import com.github.megrad79.taryn.domain.App;
+import com.github.megrad79.taryn.service.AppService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

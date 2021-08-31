@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-<<<<<<< HEAD
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -15,28 +15,17 @@
     <artifactId>Taryn</artifactId>
     <name>demo</name>
     <description>Demo project for Spring Boot</description>
-<!--    <packaging>pom</packaging>-->
-=======
-
-    <groupId>com.github.megrad79</groupId>
-    <artifactId>TNJ_microservice</artifactId>
->>>>>>> 0056066f8ce709e5e5c359907cc52109e75ea438
+    <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
-<<<<<<< HEAD
         <java.version>11</java.version>
-=======
-        <spring-boot.version>2.2.6.RELEASE</spring-boot.version>
-        <cassandra-unit-spring.version>4.3.1.0</cassandra-unit-spring.version>
->>>>>>> 0056066f8ce709e5e5c359907cc52109e75ea438
     </properties>
 
     <dependencies>
         <dependency>
-<<<<<<< HEAD
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-cassandra-reactive</artifactId>
         </dependency>
@@ -59,6 +48,24 @@
             <artifactId>reactor-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.github.joutvhu</groupId>
+            <artifactId>spring-dynamic-jpa</artifactId>
+            <version>2.3.3</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Karate -->
+        <dependency>
+            <groupId>com.intuit.karate</groupId>
+            <artifactId>karate-apache</artifactId>
+            <version>0.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.intuit.karate</groupId>
+            <artifactId>karate-junit4</artifactId>
+            <version>0.6.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -77,51 +84,4 @@
             </plugin>
         </plugins>
     </build>
-=======
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-cassandra</artifactId>
-            <version>3.2.4</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.projectreactor</groupId>
-            <artifactId>reactor-core</artifactId>
-            <version>3.4.9</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.5.4</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.20</version>
-            <optional>true</optional>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <version>2.5.4</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>io.projectreactor</groupId>
-            <artifactId>reactor-test</artifactId>
-            <version>3.4.9</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.cassandraunit</groupId>
-            <artifactId>cassandra-unit-spring</artifactId>
-            <version>${cassandra-unit-spring.version}</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
->>>>>>> 0056066f8ce709e5e5c359907cc52109e75ea438
 </project>

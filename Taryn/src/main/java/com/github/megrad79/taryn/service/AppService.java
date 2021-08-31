@@ -1,7 +1,7 @@
-package com.github.megrad79.tnj_microservice.service;
+package com.github.megrad79.taryn.service;
 
-import com.github.megrad79.tnj_microservice.domain.App;
-import com.github.megrad79.tnj_microservice.repository.AppRepository;
+import com.github.megrad79.taryn.domain.App;
+import com.github.megrad79.taryn.repository.AppRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
