@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -25,22 +25,22 @@ public class ItemController2 {
 
   @GetMapping()
   public Flux<Item> getAll() {
-    return hcService.findAll();
+    return hcService.getAll();
   }
 
   @GetMapping("/{itemId}")
   public Mono<Item> getById(@PathVariable int itemId) {
-    return hcService.findById(itemId);
+    return hcService.getById(itemId);
   }
 
   @GetMapping("/{category}")
   public Flux<Item> getByCategory(@PathVariable String category) {
-    return hcService.findByCategory(category);
+    return hcService.getByCategory(category);
   }
 
   @GetMapping("/{price}")
   public Flux<Item> getByPrice(@PathVariable double price) {
-    return hcService.findByPrice(price);
+    return hcService.getByPrice(price);
   }
 
   @PostMapping()
@@ -54,7 +54,7 @@ public class ItemController2 {
   }
 
   @DeleteMapping("/{itemId}")
-  public Mono<Item> deleteItem(@PathVariable int itemId) {
-    return hcService.deleteItem(itemId);
+  public void deleteItem(@PathVariable int itemId) {
+    hcService.deleteItem(itemId);
   }
 }

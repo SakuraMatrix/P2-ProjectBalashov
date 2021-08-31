@@ -12,58 +12,59 @@ import reactor.core.publisher.Mono;
 public class HardCodedService {
   private WebClient webClient;
 
-  public ItemService(WebClient webClient) {
+  public HardCodedService(WebClient webClient) {
     this.webClient = webClient;
   }
 
   public Flux<Item> getAll() {
-    return webClient.findAll()
+    return webClient.get()
       .uri("localhost:3000/items")
       .retrieve()
       .bodyToFlux(Item.class);
   }
 
   public Mono<Item> getById(int itemId) {
-    return webClient.findById(itemId)
+    return webClient.get()
       .uri("localhost:3000/items/{itemId}")
       .retrieve()
       .bodyToMono(Item.class);
   }
 
   public Flux<Item> getByCategory(String category) {
-    return webClient.findByCategory(category)
+    return webClient.get()
       .uri("localhost:3000/items/{category}")
       .retrieve()
       .bodyToFlux(Item.class);
   }
 
   public Flux<Item> getByPrice(double price) {
-    return webClient.findByPrice(price)
+    return webClient.get()
       .uri("localhost:3000/items/{price}")
       .retrieve()
       .bodyToFlux(Item.class);
   }
 
   public Mono<Item> createItem(Item item) {
-    return webClient.create(item)
+    return webClient.post()
         .uri("localhost:3000/items")
         .body(Mono.just(item), Item.class)
         .retrieve()
         .bodyToMono(Item.class);
   }
 
-  public Mono<Item> update(int itemId) {
-    return webClient.put(itemId)
+  public Mono<Item> updateItem(int itemId) {
+    return webClient.put()
     .uri("localhost:3000/items/{itemId}")
-    .body(Mono.just(item), Item.class)
+    .body(Mono.just(itemId), Item.class)
     .retrieve()
     .bodyToMono(Item.class);
   }
 
-  public Mono<Item> delete(int itemId) {
-    return webClient.delete(itemId)
-      .uri("localhost:3000/items/{itemId}")
+  public void deleteItem(int itemId) {
+    webClient.delete()
+      .uri("localhost:3000/items/{itemId}", itemId)
       .retrieve()
-      .bodyToMono(Void.class);
+      .bodyToMono(Void.class)
+      .subscribe();
   }
 }

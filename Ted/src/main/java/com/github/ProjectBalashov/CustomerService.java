@@ -69,7 +69,7 @@ public class CustomerService{
     }
 
     public Mono<Boolean> withdraw(int customerId, double amt) {
-        boolean flag;
+        boolean flag = true;
         try {
             //update account value
             getCustomerById(customerId).subscribe(customer -> {
@@ -90,11 +90,12 @@ public class CustomerService{
                             .subscribe();
                 }
                 else{
+
                     //log.info("User did not have enough funds.");
                 }
 
             });
-            flag = true;
+
         } catch (RuntimeException e) {
             //log.error("Something failed! " + e.getMessage());
             flag = false;
