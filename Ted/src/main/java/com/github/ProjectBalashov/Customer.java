@@ -1,19 +1,19 @@
 package com.github.ProjectBalashov;
 
 public class Customer {
-    int id;
+    int customerId;
     double balance;
-    public Customer(int id, double balance){
-            this.id = id;
+    public Customer(int customerId, double balance){
+            this.customerId = customerId;
             this.balance = balance;
         }
 
         public int getId() {
-            return id;
+            return customerId;
         }
 
         public void setId(int id) {
-            this.id = id;
+            this.customerId = id;
         }
 
         public double getBalance() {
