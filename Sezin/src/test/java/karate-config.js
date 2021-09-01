@@ -1,3 +1,4 @@
+/*
 function() {
   //set up runtime variables based on environment
   //get system property 'karate.env'
@@ -25,4 +26,13 @@ function() {
   karate.log('config.apiKey =', config.apiKey);
 
   return config;
+}*/
+
+function fn() {
+
+    var config = {
+        baseUrl : 'http://localhost:8082'
+    };
+
+    return config;
 }
