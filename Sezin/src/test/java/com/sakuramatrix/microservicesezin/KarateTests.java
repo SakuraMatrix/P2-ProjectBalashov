@@ -1,7 +1,6 @@
 package com.sakuramatrix.microservicesezin;
 
 
-import com.intuit.karate.junit5.Karate;
 
 public class KarateTests {
   //KarateTest.feature file runs good by itself but when I run it within this class it can`t find the .feature file.A bug to fix later.
