@@ -12,7 +12,7 @@ import java.util.Random;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Orders  {
+public class Orders {
     @PrimaryKeyColumn(name = "customer_id", type = PrimaryKeyType.PARTITIONED)
     @PrimaryKey("customer_id")
     private @Getter @Setter int id = new Random().nextInt(99999);

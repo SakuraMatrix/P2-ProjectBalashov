@@ -133,7 +133,7 @@ public class WebclientController {
   @GetMapping("/orders/{customer_id}")
   public Flux<Orders> getByOrderId(@PathVariable int customer_id) {
     log.info("Finding order by customer id");
-    return webclientService.findById(customer_id);
+    return webclientService.findByOrderId(customer_id);
   }
 
   @GetMapping("/orders/all")
@@ -155,7 +155,7 @@ public class WebclientController {
   }
 
   @DeleteMapping("/orders/{customer_id}")
-  public void delete(@PathVariable int customer_id) {
+  public void deleteById(@PathVariable int customer_id) {
     log.info("Deleting an order by customer id ");
     webclientService.deleteById(customer_id);
   }

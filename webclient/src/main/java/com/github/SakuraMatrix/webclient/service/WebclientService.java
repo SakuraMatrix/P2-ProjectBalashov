@@ -73,10 +73,6 @@ public class WebclientService {
     });
   }
 
-  public Mono<Void> deleteByItemId(int id) {
-    return webClient.deleteByItemId(id);
-  }
-
   public Mono<Item> addCategoryToItem(int id, String[] category) {
     return findByItemId(id).flatMap(item -> {
       Set<String> itemCategory = item.getCategory(); // retrieve the categories
@@ -104,8 +100,8 @@ public class WebclientService {
     return webClient.save(orders);
   }
 
-  public Flux<Orders> findById(@PathVariable int customer_id) {
-    return webClient.findById(customer_id);
+  public Flux<Orders> findByOrderId(@PathVariable int customer_id) {
+    return webClient.findByOrderId(customer_id);
   }
 
   public Flux<Orders> updateById(int customer_id, Orders orders) {
@@ -127,10 +123,6 @@ public class WebclientService {
 
   //Customer Service
   CqlSession session;
-
-  public CustomerService(CqlSession session){
-        this.session = session;
-    }
 
   public Customer createCustomer(Customer customer) {
     SimpleStatement simp = SimpleStatement
