@@ -13,9 +13,12 @@ import java.util.Random;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Orders  {
-    @PrimaryKeyColumn(name = "customer_id", type = PrimaryKeyType.PARTITIONED)
-    @PrimaryKey("customer_id")
-    private @Getter @Setter int id = new Random().nextInt(99999);
+
+    @PrimaryKeyColumn(value = "order_id", type = PrimaryKeyType.PARTITIONED)
+    private @Getter @Setter  int orderId;
+
+    @PrimaryKeyColumn(value = "customer_id", type = PrimaryKeyType.CLUSTERED)
+    private @Getter @Setter int id;
 
     @Column
     private @Getter @Setter int item_id;

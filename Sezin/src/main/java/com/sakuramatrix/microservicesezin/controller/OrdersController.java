@@ -28,13 +28,13 @@ public class OrdersController {
 
 
     @GetMapping("/{customer_id}")
-        public Flux<Orders> getById(@PathVariable int customer_id){
+        public Flux<Orders> findById(@PathVariable int customer_id){
         log.info("Finding order by customer id");
         return ordersRepository.findById(customer_id);
     }
 
     @GetMapping("/all")
-    public Flux<Orders> getAllOrders(){
+    public Flux<Orders> findAll(){
         log.info("Finding all orders ");
         return  ordersRepository.findAll();
     }
@@ -51,10 +51,10 @@ public class OrdersController {
         return ordersService.updateById (customer_id, orders);
     }
 
-    @DeleteMapping("/{customer_id}")
-    public void delete (@PathVariable int customer_id) {
-        log.info("Deleting an order by customer id ");
-        ordersService.deleteById (customer_id);
+    @DeleteMapping("/{order_id}")
+    public void deleteByOrderId (@PathVariable int order_id) {
+        log.info("Deleting an order by order id ");
+        ordersService.deleteByOrderId (order_id);
 
     }
 }

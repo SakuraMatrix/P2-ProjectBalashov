@@ -10,7 +10,7 @@ Scenario: Testing the exact response of a GET endpoint
 Given url 'http://localhost:8081/orders/111333'
 When method GET
 Then status 200
-And match $ == [{"id":111333,"item_id":30,"price":300.0}]
+And request {"id":111333,"item_id":30,"price":300.0}
 
 
 Scenario: Testing all valid GET endpoints
