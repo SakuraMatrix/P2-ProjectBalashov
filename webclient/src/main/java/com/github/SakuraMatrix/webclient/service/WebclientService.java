@@ -1,7 +1,7 @@
 package com.github.SakuraMatrix.webclient.service;
 
 import com.github.SakuraMatrix.webclient.domain.Item;
-import com.github.SakuraMatrix.webclient.domain.Order;
+import com.github.SakuraMatrix.webclient.domain.Orders;
 import com.github.SakuraMatrix.webclient.domain.Customer;
 
 import com.datastax.oss.driver.api.core.CqlSession;
@@ -9,6 +9,8 @@ import com.datastax.oss.driver.api.core.cql.SimpleStatement;
 import com.datastax.oss.driver.api.querybuilder.QueryBuilder;
 import com.datastax.oss.driver.api.querybuilder.select.Select;
 import com.datastax.oss.driver.api.querybuilder.update.Update;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
