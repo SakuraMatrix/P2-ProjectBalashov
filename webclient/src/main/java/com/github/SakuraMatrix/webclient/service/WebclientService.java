@@ -19,9 +19,9 @@ public class WebclientService {
   }
 
   //Item Service
-  public Mono<Long> count() {
-    return webClient.get().uri("localhost:8080/items/count").retrieve().bodyToMono(Item.class);
-  }
+  // public Mono<Long> count() {
+  //   return webClient.get().uri("localhost:8080/items/count").retrieve().bodyToMono(Item.class);
+  // }
 
   public Flux<Item> findAllItems() {
     return webClient.get().uri("localhost:8080/items").retrieve().bodyToFlux(Item.class);
@@ -85,13 +85,17 @@ public class WebclientService {
     return webClient.post().uri("localhost:8086/customers").body(Mono.just(customer), Customer.class).retrieve().bodyToMono(Customer.class);
   }
 
-  public Mono<Boolean> deposit(int customer, double amt) {
-    return webClient.put().uri("localhost:8086/customers/deposit/{customer}").body(Mono.just(amt), Customer.class).retrieve().bodyToMono(Customer.class);
-  }
+  // public Mono<Boolean> deposit(int customer, double amt) {
+  //   // return webClient.put().uri("localhost:8086/customers/deposit/{customer}").body(Mono.just(amt), Customer.class).retrieve().bodyToMono(Customer.class);
+  //   return webClient.put().uri("localhost:8086/customers/deposit/{customer}").body(Mono.just(amt), Customer.class)
+  //       .retrieve();
+  // }
 
-  public Mono<Boolean> withdraw(int customer, double amt) {
-    return webClient.put().uri("localhost:8086/customers").body(Mono.just(customer), Customer.class).retrieve().bodyToMono(Customer.class);
-  }
+  // public Mono<Boolean> withdraw(int customer, double amt) {
+  //   // return webClient.put().uri("localhost:8086/customers").body(Mono.just(customer), Customer.class).retrieve().bodyToMono(Customer.class);
+  //   return webClient.put().uri("localhost:8086/customers").body(Mono.just(customer), Customer.class).retrieve()
+  //       ;
+  // }
 
   public Mono<Customer> getCustomerById(int id) {
     return webClient.get().uri("localhost:8086/customers/{id}").body(Mono.just(id), Customer.class).retrieve().bodyToMono(Customer.class);

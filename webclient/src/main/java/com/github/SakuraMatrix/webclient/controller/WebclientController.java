@@ -27,10 +27,10 @@ public class WebclientController {
   }
 
   // Item mapping
-  @GetMapping("/items/count")
-  public Mono<Long> count() {
-    return webclientService.count();
-  }
+  // @GetMapping("/items/count")
+  // public Mono<Long> count() {
+  //   return webclientService.count();
+  // }
 
   @GetMapping("/items")
   public Flux<Item> findAllItems() {
@@ -116,14 +116,14 @@ public class WebclientController {
     return webclientService.createCustomer(customer);
   }
 
-  @PutMapping("/customers/deposit/{customer}")
-  public Mono<Boolean> deposit(@PathVariable int customer, @RequestBody double amt) {
-    return webclientService.deposit(customer, amt);
-  }
+  // @PutMapping("/customers/deposit/{customer}")
+  // public Mono<Boolean> deposit(@PathVariable int customer, @RequestBody double amt) {
+  //   return webclientService.deposit(customer, amt);
+  // }
 
-  @PutMapping("/customers/withdraw/{customer}")
-  public Mono<Boolean> withdraw(@PathVariable int customer, @RequestBody double amt) {
-    return webclientService.withdraw(customer, amt);
-  }
+  // @PutMapping("/customers/withdraw/{customer}")
+  // public Mono<Boolean> withdraw(@PathVariable int customer, @RequestBody double amt) {
+  //   return webclientService.withdraw(customer, amt);
+  // }
 
 }
