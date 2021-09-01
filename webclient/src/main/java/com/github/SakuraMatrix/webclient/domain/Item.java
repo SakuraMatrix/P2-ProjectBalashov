@@ -1,59 +1,59 @@
 package com.github.SakuraMatrix.webclient.domain;
 
-import java.util.Objects;
 
-public class Item {
-  private int itemId;
-  private String itemName;
-  private double price;
-  private String category;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.netty.buffer.Unpooled;
+import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
+import org.springframework.data.cassandra.core.mapping.Column;
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
+import org.springframework.data.cassandra.core.mapping.Table;
+
+import java.util.Objects;
+import java.io.Serializable;
+import java.util.*;
+
+@Table("items")
+public class Item implements Serializable {
+
+  @PrimaryKeyColumn(name = "item_id", type = PrimaryKeyType.PARTITIONED)
+  @PrimaryKey("item_id") // passed in the column name from the table
+  private int id = new Random().nextInt(99999);
+  @Column // table's column name matches the field so don't need to specify it
+  private String name = "New Item";
+  @Column("price") // this would be how you specify the columns
+  private double price = -1;
+  @Column
+  private Set<String> category = new HashSet<>();
 
   public Item() {
   }
 
-  public Item(int itemId, String itemName, double price, String category) {
-    this.itemId = itemId;
-    this.itemName = itemName;
+  public Item(int item_id, String name, double price, Set<String> category) {
+    this.id = item_id;
+    this.name = name;
     this.price = price;
     this.category = category;
   }
 
-  @Override
-  public String toString() {
-    return "Item{" + "itemId=" + itemId + ", itemName='" + itemName + '\'' + ", price=" + price + ", category='" + category + '\''
-        + '}';
-  }
-
-  @Override
-  public boolean equals(Object obj) {
-    if (this == obj)
-      return true;
-    if (obj == null || getClass() != obj.getClass())
-      return false;
-    Item item = (Item) obj;
-    return itemId == item.itemId && Objects.equals(itemName, item.itemName) && Double.compare(item.price, price) == 0
-        && Objects.equals(category, item.category);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(itemId, itemName, price, category);
+  public Item(int item_id, String name, double price, String... category) {
+    this(item_id, name, price, new HashSet<>(Arrays.asList(category)));
   }
 
   public int getId() {
-    return itemId;
+    return id;
   }
 
-  public void setId(int itemId) {
-    this.itemId = itemId;
+  public void setId(int id) {
+    this.id = id;
   }
 
-  public String getItemName() {
-    return itemName;
+  public String getName() {
+    return name;
   }
 
-  public void setItemName(String itemName) {
-    this.itemName = itemName;
+  public void setName(String name) {
+    this.name = name;
   }
 
   public double getPrice() {
@@ -64,11 +64,43 @@ public class Item {
     this.price = price;
   }
 
-  public String getCategory() {
+  public Set<String> getCategory() {
     return category;
   }
 
-  public void setCategory(String category) {
+  public void setCategory(Set<String> category) {
     this.category = category;
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o)
+      return true;
+    if (o == null || getClass() != o.getClass())
+      return false;
+    Item item = (Item) o;
+    return id == item.id && Double.compare(item.price, price) == 0 && Objects.equals(name, item.name)
+        && Objects.equals(category, item.category);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, name, price, category);
+  }
+
+  @Override
+  public String toString() {
+    return "Item{" + "id=" + id + ", name='" + name + '\'' + ", price=" + price + ", category=" + category + '}';
+  }
+
+  public static String toJSON(Item item) {
+    ObjectMapper mapper = new ObjectMapper();
+
+    try {
+      return mapper.writeValueAsString(item);
+    } catch (Exception e) {
+      return "";
+    }
+  }
+
 }
