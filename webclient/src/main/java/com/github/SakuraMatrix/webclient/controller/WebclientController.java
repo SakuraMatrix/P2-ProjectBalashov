@@ -1,7 +1,7 @@
 package com.github.SakuraMatrix.webclient.controller;
 
 import com.github.SakuraMatrix.webclient.domain.Item;
-import com.github.SakuraMatrix.webclient.domain.Order;
+import com.github.SakuraMatrix.webclient.domain.Orders;
 import com.github.SakuraMatrix.webclient.domain.Customer;
 import com.github.SakuraMatrix.webclient.service.WebclientService;
 
@@ -132,31 +132,26 @@ public class WebclientController {
   //Orders mapping
   @GetMapping("/orders/{customer_id}")
   public Flux<Orders> getByOrderId(@PathVariable int customer_id) {
-    log.info("Finding order by customer id");
-    return webclientService.findById(customer_id);
+    return webclientService.findByOrderId(customer_id);
   }
 
   @GetMapping("/orders/all")
   public Flux<Orders> getAllOrders() {
-    log.info("Finding all orders ");
     return webclientService.findAll();
   }
 
   @PostMapping("/orders/{customer_id}")
   public Mono<Orders> saveById(@RequestBody Orders orders) {
-    log.info("Saving an order by customer id ");
     return webclientService.saveById(orders);
   }
 
   @PutMapping("/orders/update/{customer_id}")
   public Flux<Orders> updateById(@PathVariable int customer_id, @RequestBody Orders orders) {
-    log.info("Updating an order by customer id ");
     return webclientService.updateById(customer_id, orders);
   }
 
   @DeleteMapping("/orders/{customer_id}")
-  public void delete(@PathVariable int customer_id) {
-    log.info("Deleting an order by customer id ");
+  public void deleteById(@PathVariable int customer_id) {
     webclientService.deleteById(customer_id);
   }
 

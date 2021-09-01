@@ -1,4 +1,4 @@
-package com.github.SakuraMatrix.webclient;
+package com.github.SakuraMatrix.webclient.domain;
 
 public class Customer {
   int customer_id;
