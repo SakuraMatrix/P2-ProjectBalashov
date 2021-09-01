@@ -5,15 +5,13 @@ import com.github.SakuraMatrix.webclient.domain.Orders;
 import com.github.SakuraMatrix.webclient.domain.Customer;
 import com.github.SakuraMatrix.webclient.service.WebclientService;
 
-import org.springframework.stereotype.Component;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+// import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
 
 import reactor.core.publisher.Flux;
@@ -34,94 +32,42 @@ public class WebclientController {
     return webclientService.count();
   }
 
-  /**
-   * Retrieve all items
-   * 
-   * @return
-   */
   @GetMapping("/items")
   public Flux<Item> findAllItems() {
     return webclientService.findAllItems();
   }
 
-  /**
-   * Save an item to the database (Will overwrite an existing item if not careful
-   * 
-   * @param item the item to save to database
-   * @return returns the item saved as a Mono
-   */
   @PostMapping("/items")
   public Mono<Item> save(@RequestBody Item item) {
-    return webclientService.save(item).log();
+    return webclientService.save(item);
   }
 
-  /**
-   * Retrieves an item by the specified id
-   * 
-   * @param id id of the item requested
-   * @return Returns the found item
-   */
   @GetMapping("/items/byId/{id}")
   public Mono<Item> findByItemId(@PathVariable int id) {
-    return webclientService.findByItemId(id).log();
+    return webclientService.findByItemId(id);
   }
 
-  /**
-   * Retrieves all items with the matching category
-   * 
-   * @param category Category to search by (doesn't support multiple category
-   *                 searches)
-   * @return Items with corresponding category
-   */
   @GetMapping("/items/byCategory/{category}")
   public Flux<Item> findByCategory(@PathVariable String category) {
-    return webclientService.findByCategory(category).log();
+    return webclientService.findByCategory(category);
   }
 
-  /**
-   * Retrieves all items with the matching name
-   * 
-   * @param name Name to search by
-   * @return Items with corresponding name
-   */
   @GetMapping("/items/byName/{name}")
   public Flux<Item> findByName(@PathVariable String name) {
-    return webclientService.findByName(name).log();
+    return webclientService.findByName(name);
   }
 
-  /**
-   * Updates an existing item if it exists
-   * 
-   * @param id   Item ID to update
-   * @param item values from item to use
-   * @return Update item
-   */
   @PutMapping("/items/update/{id}")
   public Mono<Item> update(@PathVariable int id, @RequestBody Item item) {
-    return webclientService.update(id, item).log();
+    return webclientService.update(id, item);
   }
 
-  /**
-   * Adds categories to the specified item using item json
-   * 
-   * @param id
-   * @param item
-   * @return
-   */
   @PutMapping("/items/addCategory/{id}")
   public Mono<Item> addCategoryById(@PathVariable int id, @RequestBody Item item) {
     String[] categories = item.getCategory().toArray(new String[(int) item.getCategory().stream().count()]);
     return webclientService.addCategoryToItem(id, categories);
   }
 
-  /**
-   * Adds categories to the specified item using a passed string variable
-   * separated by spaces (%20)
-   * 
-   * @param id         Item id
-   * @param categories Single string of categories with spaces (%20) as separator
-   * @return Updated item
-   */
   @PutMapping("/items/addCategory/{id}/{categories}")
   public Mono<Item> addCategoryById(@PathVariable int id, @PathVariable String categories) {
     String[] array = categories.split(" ");
@@ -158,12 +104,12 @@ public class WebclientController {
   //Customers Mapping
   @GetMapping("/customers")
   public Flux<Customer> findAllCustomers() {
-    return webclientService.getAllCustomers().log();
+    return webclientService.getAllCustomers();
   }
 
   @GetMapping("/customers/{id}")
   public Mono<Customer> findByCustomerId(@PathVariable int id) {
-    return webclientService.getCustomerById(id).log();
+    return webclientService.getCustomerById(id);
   }
 
   @PostMapping("/customers")
@@ -173,12 +119,12 @@ public class WebclientController {
 
   @PutMapping("/customers/deposit/{customer}")
   public Mono<Boolean> deposit(@PathVariable int customer, @RequestBody double amt) {
-    return webclientService.deposit(customer, amt).log();
+    return webclientService.deposit(customer, amt);
   }
 
   @PutMapping("/customers/withdraw/{customer}")
   public Mono<Boolean> withdraw(@PathVariable int customer, @RequestBody double amt) {
-    return webclientService.withdraw(customer, amt).log();
+    return webclientService.withdraw(customer, amt);
   }
 
 }
