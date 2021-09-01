@@ -3,6 +3,8 @@ package com.github.SakuraMatrix.webclient.controller;
 import com.github.SakuraMatrix.webclient.domain.Item;
 import com.github.SakuraMatrix.webclient.service.WebclientService;
 
+import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,16 +17,18 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+@Component
 @RestController
 @RequestMapping(value = "/items")
 public class WebclientController {
+  @Autowired
   private WebclientService webclientService;
 
   public WebclientController(WebclientService webclientService) {
     this.webclientService = webclientService;
   }
 
-  @GetMapping()
+  @GetMapping("")
   public Flux<Item> getAll() {
     return webclientService.getAll();
   }
@@ -44,7 +48,7 @@ public class WebclientController {
     return webclientService.getByPrice(price);
   }
 
-  @PostMapping()
+  @PostMapping("")
   public Mono<Item> createItem(@RequestBody Item item) {
     return webclientService.createItem(item);
   }
