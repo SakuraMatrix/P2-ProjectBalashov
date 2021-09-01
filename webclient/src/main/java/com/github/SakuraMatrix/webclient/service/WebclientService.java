@@ -19,7 +19,7 @@ public class WebclientService {
   }
 
   //Item Service
-  public Mono<Long> getCount() {
+  public Mono<Long> count() {
     return webClient.get().uri("localhost:8080/items/count").retrieve().bodyToMono(Item.class);
   }
 
@@ -44,10 +44,22 @@ public class WebclientService {
   }
 
   public Mono<Item> updateItem(int item_id) {
+    return webClient.put().uri("localhost:8080/items/update/{id}").body(Mono.just(item_id), Item.class).retrieve().bodyToMono(Item.class);
+  }
+
+  public Mono<Item> addCategoryById(int item_id, String category) {
+    return webClient.put().uri("localhost:8080/items/addCategory/{id}").body(Mono.just(item_id), Item.class).retrieve().bodyToMono(Item.class);
+  }
+
+  public Mono<Item> addCategoryToItem(int item_id, String category) {
     return webClient.put().uri("localhost:8080/items/addCategory/{id}/{categories}").body(Mono.just(item_id), Item.class).retrieve().bodyToMono(Item.class);
   }
 
   //Order Service
+
+  public Mono<Void> deleteById(int customer_id) {
+    return webClient.delete().uri("localhost:8081/orders/{customer_id}", customer_id).retrieve().bodyToMono(Void.class);
+  }
 
   public Flux<Orders> findAllOrders() {
     return webClient.get().uri("localhost:8081/orders/all").retrieve().bodyToFlux(Orders.class);
@@ -74,11 +86,11 @@ public class WebclientService {
   }
 
   public Mono<Boolean> deposit(int customer, double amt) {
-    return webClient.put().uri("localhost:8086/customers/deposit/{customer}").body(Mono.just(customer, amt), Customer.class).retrieve().bodyToMono(Customer.class);
+    return webClient.put().uri("localhost:8086/customers/deposit/{customer}").body(Mono.just(amt), Customer.class).retrieve().bodyToMono(Customer.class);
   }
 
   public Mono<Boolean> withdraw(int customer, double amt) {
-    return webClient.put().uri("localhost:8086/customers").body(Mono.just(customer, amt), Customer.class).retrieve().bodyToMono(Customer.class);
+    return webClient.put().uri("localhost:8086/customers").body(Mono.just(customer), Customer.class).retrieve().bodyToMono(Customer.class);
   }
 
   public Mono<Customer> getCustomerById(int id) {
