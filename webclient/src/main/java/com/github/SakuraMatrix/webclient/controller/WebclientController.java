@@ -1,7 +1,7 @@
-package com.github.SakuraMatrix.webflux.controller;
+package com.github.SakuraMatrix.webclient.controller;
 
-import com.github.SakuraMatrix.webflux.domain.Item;
-import com.github.SakuraMatrix.webflux.service.HardCodedService;
+import com.github.SakuraMatrix.webclient.domain.Item;
+import com.github.SakuraMatrix.webclient.service.WebclientService;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,51 +10,52 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping(value = "/items")
-public class ItemController2 {
-  private HardCodedService hcService;
+public class WebclientController {
+  private WebclientService webclientService;
 
-  public ItemController2(HardCodedService hcService) {
-    this.hcService = hcService;
+  public WebclientController(WebclientService webclientService) {
+    this.webclientService = webclientService;
   }
 
   @GetMapping()
   public Flux<Item> getAll() {
-    return hcService.findAll();
+    return webclientService.getAll();
   }
 
   @GetMapping("/{itemId}")
   public Mono<Item> getById(@PathVariable int itemId) {
-    return hcService.findById(itemId);
+    return webclientService.getById(itemId);
   }
 
   @GetMapping("/{category}")
   public Flux<Item> getByCategory(@PathVariable String category) {
-    return hcService.findByCategory(category);
+    return webclientService.getByCategory(category);
   }
 
   @GetMapping("/{price}")
   public Flux<Item> getByPrice(@PathVariable double price) {
-    return hcService.findByPrice(price);
+    return webclientService.getByPrice(price);
   }
 
   @PostMapping()
   public Mono<Item> createItem(@RequestBody Item item) {
-    return hcService.createItem(item);
+    return webclientService.createItem(item);
   }
 
   @PutMapping("/{itemId}")
   public Mono<Item> updateItem(@PathVariable int itemId) {
-    return hcService.updateItem(itemId);
+    return webclientService.updateItem(itemId);
   }
 
   @DeleteMapping("/{itemId}")
-  public Mono<Item> deleteItem(@PathVariable int itemId) {
-    return hcService.deleteItem(itemId);
+  public void deleteItem(@PathVariable int itemId) {
+    webclientService.deleteItem(itemId);
   }
 }

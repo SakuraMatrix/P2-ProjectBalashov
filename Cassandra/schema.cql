@@ -15,4 +15,3 @@ CREATE TABLE IF NOT EXISTS items (
     category SET<TEXT>,
     PRIMARY KEY (itemId)
 );
-
