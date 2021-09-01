@@ -28,7 +28,7 @@ public class CassandraConfig extends AbstractReactiveCassandraConfiguration {
 
   @Override
   protected String getContactPoints() {
-    return contactpoints;
+    return "localhost";
   }
 
   @Override
