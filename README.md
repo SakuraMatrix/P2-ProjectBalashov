@@ -9,7 +9,6 @@ Sci-Fi is an ecommerce application which sells science-fiction themed items.
 * See the total balance for items in their cart.
 * "Buy" one item in their cart.
 * "Buy" all items in their cart.
-* Delete an item from their cart. 
 
 ## Item Categories
 * Games
@@ -29,7 +28,7 @@ Sci-Fi is an ecommerce application which sells science-fiction themed items.
   * Spring WebClient
 
 ## How to run
-```mvn compile exec: java```
+```mvn spring-boot:run```
 
 ## Team Members 
 * Ted Balashov
