@@ -3,8 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Lane/Lane.iml" filepath="$PROJECT_DIR$/Lane/Lane.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ted/Ted.iml" filepath="$PROJECT_DIR$/Ted/Ted.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sezin/microservice-sezin.iml" filepath="$PROJECT_DIR$/Sezin/microservice-sezin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/p2-ProjectBalashov.iml" filepath="$PROJECT_DIR$/p2-ProjectBalashov.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webclient/webclient.iml" filepath="$PROJECT_DIR$/webclient/webclient.iml" />
     </modules>
   </component>
 </project>
