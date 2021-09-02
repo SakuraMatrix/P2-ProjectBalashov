@@ -14,7 +14,7 @@ import java.util.Random;
 @NoArgsConstructor
 public class Orders  {
 
-    @PrimaryKeyColumn(value = "order_id", type = PrimaryKeyType.PARTITIONED)
+    @PrimaryKeyColumn(value = "orderId", type = PrimaryKeyType.PARTITIONED)
     private @Getter @Setter  int orderId;
 
     @PrimaryKeyColumn(value = "customer_id", type = PrimaryKeyType.CLUSTERED)

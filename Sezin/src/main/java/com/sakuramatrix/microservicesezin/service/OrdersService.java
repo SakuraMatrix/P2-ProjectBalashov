@@ -15,7 +15,7 @@ public class OrdersService {
         this.ordersRepository = ordersRepository;}
 
 
-    public void deleteByOrderId (int order_id) {ordersRepository.deleteByOrderId(order_id).subscribe();}
+    public void deleteByOrderId (int orderId) {ordersRepository.deleteByOrderId(orderId).subscribe();}
 
     public Mono<Orders> saveById (@RequestBody Orders orders) {
         return ordersRepository.save(orders);
