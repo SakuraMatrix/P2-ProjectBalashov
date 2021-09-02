@@ -1,15 +1,12 @@
 package com.github.Balashov.Lane.service;
 
-
 import com.github.Balashov.Lane.domain.Item;
 import com.github.Balashov.Lane.repository.ItemRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Set;
 
 @Service
@@ -47,6 +44,28 @@ public class ItemService{
                 .log();
     }
 
+    public Mono<Item> saveOrUpdate(Item item) {
+
+        return  findById(item.getId())
+                .log()
+                .flatMap(foundItem -> {
+                    String name = item.getName();
+                    double price = item.getPrice();
+                    Set<String> category = item.getCategory();
+
+                    if (name != null && !name.isEmpty() && !"new item".equalsIgnoreCase(name)) {
+                        foundItem.setName(name);
+                    }
+                    if (price != -1)  {
+                        foundItem.setPrice(price);
+                    }
+                    if (category.stream().count() > 0) {
+                        foundItem.setCategory(category);
+                    }
+                    return itemRepository.save(foundItem);
+                });
+    }
+
     public Mono<Item> update(int id, Item item) {
         return findById(id).flatMap(foundItem -> {
             String name = item.getName();
@@ -68,19 +87,9 @@ public class ItemService{
     }
 
     public Mono<Void> deleteById(int id) {
-        return itemRepository.deleteById(id);
+        return itemRepository.findById(id)
+                .flatMap(item -> itemRepository.delete(item));
     }
-
-    public Mono<Item> addCategoryToItem(int id, String[] category) {
-        return findById(id).flatMap(item -> {
-            Set<String> itemCategory = item.getCategory(); //retrieve the categories
-            itemCategory.addAll(Arrays.asList(category)); //add the new categories
-            item.setCategory(itemCategory); //reapply the categories
-            return update(id, item); //update it
-        });
-
-    }
-
 
     public Flux<Item> generate() {
         return itemRepository.saveAll(Arrays.asList(new Item(0001, "Millennium Falcon", 3000, "Star Wars", "Figurine", "Spaceship"),
