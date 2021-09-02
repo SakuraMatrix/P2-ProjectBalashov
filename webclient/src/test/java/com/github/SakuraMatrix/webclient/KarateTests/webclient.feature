@@ -1,7 +1,6 @@
 Feature: fetching Item Details
  
 Scenario: testing the get call for all items
- 
 Given url 'https://localhost:9000/items'
 When method GET
 Then status 200
@@ -30,7 +29,7 @@ Given path response.id
 When method get
 Then status 200
 
-****************************************************************
+
 CUSTOMER TESTS
 
 Scenario: testing the get call for all customers
@@ -47,4 +46,12 @@ And match == {customerId:"#notnull", balance: 5000.00}
 
 Given path response.id
 When method get
+Then status 200
+
+
+ORDERS TESTS
+
+Scenario: testing the get call for all orders
+Given url 'https://localhost:9000/orders/all'
+When method GET
 Then status 200
