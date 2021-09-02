@@ -3,24 +3,20 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/TNJ_microservice/pom.xml" />
+        <option value="$PROJECT_DIR$/Taryn/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/htmlServer/pom.xml" />
         <option value="$PROJECT_DIR$/LanChi/pom.xml" />
         <option value="$PROJECT_DIR$/Lane/pom.xml" />
         <option value="$PROJECT_DIR$/Sezin/pom.xml" />
         <option value="$PROJECT_DIR$/Ted/pom.xml" />
+        <option value="$PROJECT_DIR$/webflux/pom.xml" />
+        <option value="$PROJECT_DIR$/demo-Taryn/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11 (3)" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
-  </component>
-=======
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/Sezin/pom.xml" />
-        <option value="$PROJECT_DIR$/Lane/pom.xml" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="16" project-jdk-type="JavaSDK" />
->>>>>>> 44c29fda8be193832ae559444b0d2422ed3c4c67
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="openjdk-16" project-jdk-type="JavaSDK" />
 </project>

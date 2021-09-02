@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/Cassandra/Cassandra.iml" filepath="$PROJECT_DIR$/Cassandra/Cassandra.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Lane/Item-Service.iml" filepath="$PROJECT_DIR$/Lane/Item-Service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/LanChi/LanChi.iml" filepath="$PROJECT_DIR$/LanChi/LanChi.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Sezin/Sezin.iml" filepath="$PROJECT_DIR$/Sezin/Sezin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Ted/Ted.iml" filepath="$PROJECT_DIR$/Ted/Ted.iml" />
-=======
       <module fileurl="file://$PROJECT_DIR$/Lane/Lane.iml" filepath="$PROJECT_DIR$/Lane/Lane.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LanChi/P2-ProjectBalashov.iml" filepath="$PROJECT_DIR$/LanChi/P2-ProjectBalashov.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Taryn/Taryn.iml" filepath="$PROJECT_DIR$/Taryn/Taryn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ted/Ted.iml" filepath="$PROJECT_DIR$/Ted/Ted.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-Taryn/demo.iml" filepath="$PROJECT_DIR$/demo-Taryn/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka/eureka.iml" filepath="$PROJECT_DIR$/eureka/eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/htmlServer/html.iml" filepath="$PROJECT_DIR$/htmlServer/html.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sezin/microservice-sezin.iml" filepath="$PROJECT_DIR$/Sezin/microservice-sezin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/p2-ProjectBalashov.iml" filepath="$PROJECT_DIR$/p2-ProjectBalashov.iml" />
->>>>>>> 44c29fda8be193832ae559444b0d2422ed3c4c67
+      <module fileurl="file://$PROJECT_DIR$/webclient/webclient.iml" filepath="$PROJECT_DIR$/webclient/webclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webflux/webflux.iml" filepath="$PROJECT_DIR$/webflux/webflux.iml" />
     </modules>
   </component>
 </project>
