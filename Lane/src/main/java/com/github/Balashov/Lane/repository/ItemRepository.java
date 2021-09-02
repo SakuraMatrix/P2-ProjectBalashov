@@ -14,6 +14,4 @@ public interface ItemRepository extends ReactiveCassandraRepository<Item, Intege
     @Query(value = "SELECT * FROM scifi.items WHERE name = ?0 ALLOW FILTERING", allowFiltering = true)
     Flux<Item> findByName(String name);
 
-
-
 }

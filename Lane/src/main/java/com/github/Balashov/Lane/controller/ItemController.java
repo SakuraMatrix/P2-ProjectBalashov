@@ -86,27 +86,14 @@ public class ItemController {
     }
 
     /**
-     * Adds categories to the specified item using item json
-     * @param id
-     * @param item
-     * @return
+     * Deletes an existing item if it exists
+     * @param id Item ID to delete
+     * @return Void
      */
-    @PutMapping("/addCategory/{id}")
-    public Mono<Item> addCategoryById(@PathVariable int id, @RequestBody Item item) {
-        String[] categories = item.getCategory().toArray(new String[(int) item.getCategory().stream().count()]);
-        return itemService.addCategoryToItem(id, categories);
+    @DeleteMapping("/delete/{id}")
+    public Mono<Void> deleteById(@PathVariable int id) {
+        return itemService.deleteById(id).log();
     }
 
-    /**
-     * Adds categories to the specified item using a passed string variable separated by spaces (%20)
-     * @param id Item id
-     * @param categories Single string of categories with spaces (%20) as separator
-     * @return Updated item
-     */
-    @PutMapping("/addCategory/{id}/{categories}")
-    public Mono<Item> addCategoryById(@PathVariable int id, @PathVariable String categories) {
-        String[] array = categories.split(" ");
-        return itemService.addCategoryToItem(id, array);
-    }
 
 }
