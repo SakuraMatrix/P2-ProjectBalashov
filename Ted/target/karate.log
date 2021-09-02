@@ -1,0 +1,105 @@
+09:37:40.211 [main] ERROR com.intuit.karate - karate.org.apache.http.conn.HttpHostConnectException: Connect to localhost:8086 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: no further information, http call failed after 449 milliseconds for url: http://localhost:8086
+09:37:40.211 [main] ERROR com.intuit.karate - classpath:com/github/ProjectBalashov/karate/customers.feature:8
+When method GET
+http call failed after 449 milliseconds for url: http://localhost:8086
+classpath:com/github/ProjectBalashov/karate/customers.feature:8
+09:52:50.714 [main] ERROR com.intuit.karate - classpath:com/github/ProjectBalashov/karate/customers.feature:5
+* def first = response[0]
+js failed:
+>>>>
+01: response[0]
+<<<<
+org.graalvm.polyglot.PolyglotException: ReferenceError: "response" is not defined
+- <js>.:program(Unnamed:1)
+
+classpath:com/github/ProjectBalashov/karate/customers.feature:5
+09:52:50.761 [main] ERROR com.intuit.karate - classpath:com/github/ProjectBalashov/karate/customers.feature:5
+* def first = response[0]
+js failed:
+>>>>
+01: response[0]
+<<<<
+org.graalvm.polyglot.PolyglotException: ReferenceError: "response" is not defined
+- <js>.:program(Unnamed:1)
+
+classpath:com/github/ProjectBalashov/karate/customers.feature:5
+09:52:50.792 [main] ERROR com.intuit.karate - classpath:com/github/ProjectBalashov/karate/customers.feature:5
+* def first = response[0]
+js failed:
+>>>>
+01: response[0]
+<<<<
+org.graalvm.polyglot.PolyglotException: ReferenceError: "response" is not defined
+- <js>.:program(Unnamed:1)
+
+classpath:com/github/ProjectBalashov/karate/customers.feature:5
+09:52:50.808 [main] ERROR com.intuit.karate - classpath:com/github/ProjectBalashov/karate/customers.feature:5
+* def first = response[0]
+js failed:
+>>>>
+01: response[0]
+<<<<
+org.graalvm.polyglot.PolyglotException: ReferenceError: "response" is not defined
+- <js>.:program(Unnamed:1)
+
+classpath:com/github/ProjectBalashov/karate/customers.feature:5
+09:52:50.824 [main] ERROR com.intuit.karate - classpath:com/github/ProjectBalashov/karate/customers.feature:5
+* def first = response[0]
+js failed:
+>>>>
+01: response[0]
+<<<<
+org.graalvm.polyglot.PolyglotException: ReferenceError: "response" is not defined
+- <js>.:program(Unnamed:1)
+
+classpath:com/github/ProjectBalashov/karate/customers.feature:5
+09:54:03.984 [main] ERROR com.intuit.karate - classpath:com/github/ProjectBalashov/karate/customers.feature:5
+* def first = response[0]
+js failed:
+>>>>
+01: response[0]
+<<<<
+org.graalvm.polyglot.PolyglotException: ReferenceError: "response" is not defined
+- <js>.:program(Unnamed:1)
+
+classpath:com/github/ProjectBalashov/karate/customers.feature:5
+09:54:04.031 [main] ERROR com.intuit.karate - classpath:com/github/ProjectBalashov/karate/customers.feature:5
+* def first = response[0]
+js failed:
+>>>>
+01: response[0]
+<<<<
+org.graalvm.polyglot.PolyglotException: ReferenceError: "response" is not defined
+- <js>.:program(Unnamed:1)
+
+classpath:com/github/ProjectBalashov/karate/customers.feature:5
+09:54:04.046 [main] ERROR com.intuit.karate - classpath:com/github/ProjectBalashov/karate/customers.feature:5
+* def first = response[0]
+js failed:
+>>>>
+01: response[0]
+<<<<
+org.graalvm.polyglot.PolyglotException: ReferenceError: "response" is not defined
+- <js>.:program(Unnamed:1)
+
+classpath:com/github/ProjectBalashov/karate/customers.feature:5
+09:54:04.062 [main] ERROR com.intuit.karate - classpath:com/github/ProjectBalashov/karate/customers.feature:5
+* def first = response[0]
+js failed:
+>>>>
+01: response[0]
+<<<<
+org.graalvm.polyglot.PolyglotException: ReferenceError: "response" is not defined
+- <js>.:program(Unnamed:1)
+
+classpath:com/github/ProjectBalashov/karate/customers.feature:5
+09:54:04.080 [main] ERROR com.intuit.karate - classpath:com/github/ProjectBalashov/karate/customers.feature:5
+* def first = response[0]
+js failed:
+>>>>
+01: response[0]
+<<<<
+org.graalvm.polyglot.PolyglotException: ReferenceError: "response" is not defined
+- <js>.:program(Unnamed:1)
+
+classpath:com/github/ProjectBalashov/karate/customers.feature:5
