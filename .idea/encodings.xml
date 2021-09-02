@@ -8,6 +8,7 @@
     <file url="file://$PROJECT_DIR$/Sezin/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Sezin/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Taryn/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Taryn/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Ted/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Ted/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo-Taryn/src/main/java" charset="UTF-8" />
@@ -18,6 +19,8 @@
     <file url="file://$PROJECT_DIR$/gateway/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/htmlServer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/htmlServer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/webclient/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/webclient/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/webflux/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/webflux/src/main/resources" charset="UTF-8" />
   </component>

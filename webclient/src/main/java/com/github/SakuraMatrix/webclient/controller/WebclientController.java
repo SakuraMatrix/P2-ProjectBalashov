@@ -42,9 +42,9 @@ public class WebclientController {
     return webclientService.save(item);
   }
 
-  @GetMapping("/items/byId/{id}")
-  public Mono<Item> findByItemId(@PathVariable int id) {
-    return webclientService.findByItemId(id);
+  @GetMapping("/items/byId/{item_id}")
+  public Mono<Item> findByItemId(@PathVariable int item_id) {
+    return webclientService.findByItemId(item_id);
   }
 
   @GetMapping("/items/byCategory/{category}")
@@ -57,38 +57,36 @@ public class WebclientController {
     return webclientService.findByName(name);
   }
 
-  @PutMapping("/items/update/{id}")
-  public Mono<Item> update(@PathVariable int id, @RequestBody Item item) {
-    return webclientService.update(id, item);
+  @PutMapping("/items/update/{item_id}")
+  public Mono<Item> updateItem(@PathVariable int item_id, @RequestBody Item item) {
+    return webclientService.updateItem(item_id);
   }
 
-  @PutMapping("/items/addCategory/{id}")
-  public Mono<Item> addCategoryById(@PathVariable int id, @RequestBody Item item) {
-    String[] categories = item.getCategory().toArray(new String[(int) item.getCategory().stream().count()]);
-    return webclientService.addCategoryToItem(id, categories);
+  @PutMapping("/items/addCategory/{item_id}")
+  public Mono<Item> addCategoryById(@PathVariable int item_id, @PathVariable String category) {
+    return webclientService.addCategoryById(item_id, category);
   }
 
-  @PutMapping("/items/addCategory/{id}/{categories}")
-  public Mono<Item> addCategoryById(@PathVariable int id, @PathVariable String categories) {
-    String[] array = categories.split(" ");
-    return webclientService.addCategoryToItem(id, array);
+  @PutMapping("/items/addCategory/{item_id}/{categories}")
+  public Mono<Item> addCategoryToItem(@PathVariable int item_id, @PathVariable String category) {
+    return webclientService.addCategoryToItem(item_id, category);
   }
 
 
   //Orders mapping
   @GetMapping("/orders/{customer_id}")
-  public Flux<Orders> getByOrderId(@PathVariable int customer_id) {
+  public Flux<Orders> findByOrderId(@PathVariable int customer_id) {
     return webclientService.findByOrderId(customer_id);
   }
 
   @GetMapping("/orders/all")
-  public Flux<Orders> getAllOrders() {
-    return webclientService.findAll();
+  public Flux<Orders> findAllOrders() {
+    return webclientService.findAllOrders();
   }
 
   @PostMapping("/orders/{customer_id}")
-  public Mono<Orders> saveById(@RequestBody Orders orders) {
-    return webclientService.saveById(orders);
+  public Mono<Orders> saveById(@PathVariable int customer_id, @RequestBody Orders orders) {
+    return webclientService.saveById(customer_id, orders);
   }
 
   @PutMapping("/orders/update/{customer_id}")
@@ -104,16 +102,16 @@ public class WebclientController {
   //Customers Mapping
   @GetMapping("/customers")
   public Flux<Customer> findAllCustomers() {
-    return webclientService.getAllCustomers();
+    return webclientService.findAllCustomers();
   }
 
-  @GetMapping("/customers/{id}")
-  public Mono<Customer> findByCustomerId(@PathVariable int id) {
-    return webclientService.getCustomerById(id);
+  @GetMapping("/customers/{customerId}")
+  public Mono<Customer> getByCustomerId(@PathVariable int customerId) {
+    return webclientService.getCustomerById(customerId);
   }
 
   @PostMapping("/customers")
-  public Customer createCustomer(@RequestBody Customer customer) {
+  public Mono<Customer> createCustomer(@RequestBody Customer customer) {
     return webclientService.createCustomer(customer);
   }
 
