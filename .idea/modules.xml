@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Cassandra/Cassandra.iml" filepath="$PROJECT_DIR$/Cassandra/Cassandra.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lane/Item-Service.iml" filepath="$PROJECT_DIR$/Lane/Item-Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LanChi/LanChi.iml" filepath="$PROJECT_DIR$/LanChi/LanChi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sezin/Sezin.iml" filepath="$PROJECT_DIR$/Sezin/Sezin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ted/Ted.iml" filepath="$PROJECT_DIR$/Ted/Ted.iml" />
+    </modules>
+  </component>
+</project>
