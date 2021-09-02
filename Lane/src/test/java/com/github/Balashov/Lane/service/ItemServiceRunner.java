@@ -1,11 +1,10 @@
-package com.github.SakuraMatrix.P2ProjectBalashov;
+package com.github.Balashov.Lane.service;
 
 import com.intuit.karate.junit5.Karate;
 
-class ScifiTests {
+public class ItemServiceRunner {
     @Karate.Test
-    Karate testAll() {
+    Karate testAll(){
         return Karate.run().relativeTo(getClass());
     }
-
 }

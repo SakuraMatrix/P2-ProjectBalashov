@@ -66,15 +66,15 @@ public class WebclientService {
   }
 
   public Mono<Orders> saveById(int customer_id, Orders orders) {
-    return webClient.post().uri("localhost:8081/orders/{customer_id}").retrieve().bodyToMono(Orders.class);
+    return webClient.post().uri("localhost:8081/orders/{customer_id}", customer_id).retrieve().bodyToMono(Orders.class);
   }
 
   public Flux<Orders> findByOrderId(int customer_id) {
-    return webClient.get().uri("localhost:8081/orders/{customer_id}").retrieve().bodyToFlux(Orders.class);
+    return webClient.get().uri("localhost:8081/orders/{customer_id}", customer_id).retrieve().bodyToFlux(Orders.class);
   }
 
   public Flux<Orders> updateById(int customer_id, Orders orders) {
-    return webClient.put().uri("localhost:8081/orders/update/{customer_id}").retrieve().bodyToFlux(Orders.class);
+    return webClient.put().uri("localhost:8081/orders/update/{customer_id}", customer_id).retrieve().bodyToFlux(Orders.class);
   }
 
   //Customer Service

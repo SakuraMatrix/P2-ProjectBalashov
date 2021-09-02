@@ -1,11 +1,10 @@
-package com.github.SakuraMatrix.P2ProjectBalashov;
+package com.github.SakuraMatrix.P2ProjectBalashov.karate;
 
 import com.intuit.karate.junit5.Karate;
 
-class ScifiTests {
+public class ScifiRunner {
     @Karate.Test
-    Karate testAll() {
+    Karate runDojos(){
         return Karate.run().relativeTo(getClass());
     }
-
 }

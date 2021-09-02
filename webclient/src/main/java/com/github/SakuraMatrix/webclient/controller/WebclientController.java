@@ -94,7 +94,7 @@ public class WebclientController {
     return webclientService.updateById(customer_id, orders);
   }
 
-  @DeleteMapping("/orders/{customer_id}")
+  @DeleteMapping("/orders/{order_id}")
   public void deleteById(@PathVariable int customer_id) {
     webclientService.deleteById(customer_id);
   }
