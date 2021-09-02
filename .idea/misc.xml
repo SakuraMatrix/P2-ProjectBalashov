@@ -11,10 +11,15 @@
         <option value="$PROJECT_DIR$/htmlServer/pom.xml" />
         <option value="$PROJECT_DIR$/LanChi/pom.xml" />
         <option value="$PROJECT_DIR$/Lane/pom.xml" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/Ted/pom.xml" />
+        <option value="$PROJECT_DIR$/webclient/pom.xml" />
+=======
         <option value="$PROJECT_DIR$/Sezin/pom.xml" />
         <option value="$PROJECT_DIR$/Ted/pom.xml" />
         <option value="$PROJECT_DIR$/webflux/pom.xml" />
         <option value="$PROJECT_DIR$/demo-Taryn/pom.xml" />
+>>>>>>> 55ac6b7865a8e9454d89dab85c7ee1d3d005184e
       </list>
     </option>
   </component>
