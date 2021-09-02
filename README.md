@@ -6,19 +6,35 @@ Sci-Fi is an ecommerce application which sells science-fiction themed items.
 
 ## Users can:
 * View all items.
+  ```GET /items```
 * Search for an item by id.
+  ```GET /items/byId/{item_id}```
 * Search for an item by name.
+  ```GET /items/byName/{name}```
 * Search for an item by category.
+  ```GET /items/byCategory/{category}```
 * Add an item to their cart.
+  ```POST /orders/{customer_id}```
 * See all items in their cart.
+  ```GET /orders/{customer_id}```
 * Modify an order in their cart.
-* Remove an item from their cart.
+  ```PUT /orders/update/{customer_id}```
+* Remove an order from their cart.
+  ```DELETE /orders/{order_id}```
 * Set up and view their account balance.
-* Deposit and withdrwa from their account balance.
+  ```POST /customers```
+* View their account balance.
+  ```GET /customers/{id}```
+* Deposit from their account balance.
+  ```PUT /customers/deposit/{customer}```
+* Withdraw from their account balance.
+  ```PUT /customers/withdraw/{customer}```
 
 ## Item Categories
-* Games
+* Art
+* Films
 * Books
+* Games
 * Figurines
 * Spaceships!
 
