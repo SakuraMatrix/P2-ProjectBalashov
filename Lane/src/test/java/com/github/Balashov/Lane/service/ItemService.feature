@@ -2,12 +2,12 @@ Feature: LaneMsApplicationTest
 
   Background:
     * url 'http://localhost:8080'
-    * def service = response[0]
+    #* def service = response[0]
 
   Scenario: Find All
     When method GET
     Then status 200
-    And match $ == {id:"#notnull",name:#string,price:#notnull,category:#string}
+    #And match $ == {id:"#notnull",name:#string,price:#notnull,category:#string}
 
   Scenario: Find Id
     Given path 'byId', service.id
