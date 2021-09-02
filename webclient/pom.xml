@@ -33,12 +33,12 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 		</dependency>
-			<dependency>
-				<groupId>com.intuit.karate</groupId>
-				<artifactId>karate-apache</artifactId>
-				<version>0.9.5</version>
-				<scope>test</scope>
-			</dependency>
+		<dependency>
+			<groupId>com.intuit.karate</groupId>
+			<artifactId>karate-apache</artifactId>
+			<version>0.9.5</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>com.intuit.karate</groupId>
 			<artifactId>karate-junit5</artifactId>
@@ -64,7 +64,7 @@
             <exclude>**/*.java</exclude>
           </excludes>
       </testResource>
-        </testResources> 
+    </testResources> 
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

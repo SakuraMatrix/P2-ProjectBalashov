@@ -1,14 +1,20 @@
 # Sci-Fi
 
+![alt text](./scifi.png)
+
 Sci-Fi is an ecommerce application which sells science-fiction themed items. 
 
 ## Users can:
 * View all items.
-* Search for a specific item.
+* Search for an item by id.
+* Search for an item by name.
+* Search for an item by category.
 * Add an item to their cart.
-* See the total balance for items in their cart.
-* "Buy" one item in their cart.
-* "Buy" all items in their cart.
+* See all items in their cart.
+* Modify an order in their cart.
+* Remove an item from their cart.
+* Set up and view their account balance.
+* Deposit and withdrwa from their account balance.
 
 ## Item Categories
 * Games

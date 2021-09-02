@@ -1,17 +1,17 @@
 package com.github.SakuraMatrix.webclient.domain;
 
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.netty.buffer.Unpooled;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.core.mapping.Table;
 
+import java.util.*;
 import java.util.Objects;
 import java.io.Serializable;
-import java.util.*;
+
 
 @Table("items")
 public class Item implements Serializable {
