@@ -7,10 +7,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 @SpringBootApplication
 public class WebclientApp {
-  @Bean
-  public WebClient webClient() {
-    return WebClient.create();
-  }
 
   public static void main(String[] args) {
     SpringApplication.run(WebclientApp.class, args);

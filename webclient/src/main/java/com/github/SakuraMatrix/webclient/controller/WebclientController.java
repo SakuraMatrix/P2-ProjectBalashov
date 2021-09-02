@@ -42,9 +42,9 @@ public class WebclientController {
     return webclientService.save(item);
   }
 
-  @GetMapping("/items/byId/{id}")
-  public Mono<Item> findByItemId(@PathVariable int id) {
-    return webclientService.findByItemId(id);
+  @GetMapping("/items/byId/{item_id}")
+  public Mono<Item> findByItemId(@PathVariable int item_id) {
+    return webclientService.findByItemId(item_id);
   }
 
   @GetMapping("/items/byCategory/{category}")
@@ -57,20 +57,19 @@ public class WebclientController {
     return webclientService.findByName(name);
   }
 
-  @PutMapping("/items/update/{id}")
-  public Mono<Item> updateItem(@PathVariable int id, @RequestBody Item item) {
-    // return webclientService.updateItem(id, item);
-    return webclientService.updateItem(id);
+  @PutMapping("/items/update/{item_id}")
+  public Mono<Item> updateItem(@PathVariable int item_id, @RequestBody Item item) {
+    return webclientService.updateItem(item_id);
   }
 
-  @PutMapping("/items/addCategory/{id}")
-  public Mono<Item> addCategoryById(@PathVariable int id, @PathVariable String category) {
-    return webclientService.addCategoryById(id, category);
+  @PutMapping("/items/addCategory/{item_id}")
+  public Mono<Item> addCategoryById(@PathVariable int item_id, @PathVariable String category) {
+    return webclientService.addCategoryById(item_id, category);
   }
 
-  @PutMapping("/items/addCategory/{id}/{categories}")
-  public Mono<Item> addCategoryToItem(@PathVariable int id, @PathVariable String category) {
-    return webclientService.addCategoryToItem(id, category);
+  @PutMapping("/items/addCategory/{item_id}/{categories}")
+  public Mono<Item> addCategoryToItem(@PathVariable int item_id, @PathVariable String category) {
+    return webclientService.addCategoryToItem(item_id, category);
   }
 
 
@@ -106,9 +105,9 @@ public class WebclientController {
     return webclientService.findAllCustomers();
   }
 
-  @GetMapping("/customers/{id}")
-  public Mono<Customer> getByCustomerId(@PathVariable int id) {
-    return webclientService.getCustomerById(id);
+  @GetMapping("/customers/{customerId}")
+  public Mono<Customer> getByCustomerId(@PathVariable int customerId) {
+    return webclientService.getCustomerById(customerId);
   }
 
   @PostMapping("/customers")
