@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+<<<<<<< HEAD
     <file url="file://$PROJECT_DIR$/LanChi/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/LanChi/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Lane/src/main/java" charset="UTF-8" />
@@ -8,5 +9,11 @@
     <file url="file://$PROJECT_DIR$/Sezin/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Ted/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Ted/src/main/resources" charset="UTF-8" />
+=======
+    <file url="file://$PROJECT_DIR$/Lane/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Lane/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Sezin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Sezin/src/main/resources" charset="UTF-8" />
+>>>>>>> 44c29fda8be193832ae559444b0d2422ed3c4c67
   </component>
 </project>

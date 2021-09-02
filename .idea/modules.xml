@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/Cassandra/Cassandra.iml" filepath="$PROJECT_DIR$/Cassandra/Cassandra.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lane/Item-Service.iml" filepath="$PROJECT_DIR$/Lane/Item-Service.iml" />
       <module fileurl="file://$PROJECT_DIR$/LanChi/LanChi.iml" filepath="$PROJECT_DIR$/LanChi/LanChi.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sezin/Sezin.iml" filepath="$PROJECT_DIR$/Sezin/Sezin.iml" />
       <module fileurl="file://$PROJECT_DIR$/Ted/Ted.iml" filepath="$PROJECT_DIR$/Ted/Ted.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/Lane/Lane.iml" filepath="$PROJECT_DIR$/Lane/Lane.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sezin/microservice-sezin.iml" filepath="$PROJECT_DIR$/Sezin/microservice-sezin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p2-ProjectBalashov.iml" filepath="$PROJECT_DIR$/p2-ProjectBalashov.iml" />
+>>>>>>> 44c29fda8be193832ae559444b0d2422ed3c4c67
     </modules>
   </component>
 </project>

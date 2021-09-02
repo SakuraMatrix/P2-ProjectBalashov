@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+<<<<<<< HEAD
         <module name="LanChi" />
         <module name="Ted" />
         <module name="Sezin" />
@@ -21,15 +22,33 @@
       <module name="P2-ProjectBalashov" target="11" />
       <module name="Sezin" target="16" />
       <module name="Ted" target="11" />
+=======
+        <module name="Lane" />
+        <module name="microservice-sezin" />
+        <module name="p2-ProjectBalashov" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Lane" target="11" />
+      <module name="microservice-sezin" target="16" />
+      <module name="p2-ProjectBalashov" target="16" />
+      <module name="P2-ProjectBalashov" target="15" />
+>>>>>>> 44c29fda8be193832ae559444b0d2422ed3c4c67
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+<<<<<<< HEAD
       <module name="Item-Service" options="-parameters" />
       <module name="LanChi" options="-parameters" />
       <module name="Lane (1)" options="-parameters" />
       <module name="Sezin" options="-parameters" />
       <module name="Ted" options="-parameters" />
+=======
+      <module name="Lane" options="-parameters" />
+      <module name="microservice-sezin" options="-parameters" />
+      <module name="p2-ProjectBalashov" options="-parameters" />
+>>>>>>> 44c29fda8be193832ae559444b0d2422ed3c4c67
     </option>
   </component>
 </project>
