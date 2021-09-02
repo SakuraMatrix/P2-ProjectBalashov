@@ -11,17 +11,13 @@
         <option value="$PROJECT_DIR$/htmlServer/pom.xml" />
         <option value="$PROJECT_DIR$/LanChi/pom.xml" />
         <option value="$PROJECT_DIR$/Lane/pom.xml" />
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/Ted/pom.xml" />
-        <option value="$PROJECT_DIR$/webclient/pom.xml" />
-=======
         <option value="$PROJECT_DIR$/Sezin/pom.xml" />
         <option value="$PROJECT_DIR$/Ted/pom.xml" />
         <option value="$PROJECT_DIR$/webflux/pom.xml" />
         <option value="$PROJECT_DIR$/demo-Taryn/pom.xml" />
->>>>>>> 55ac6b7865a8e9454d89dab85c7ee1d3d005184e
+        <option value="$PROJECT_DIR$/webclient/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="openjdk-16" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" default="true" project-jdk-name="openjdk-16" project-jdk-type="JavaSDK" />
 </project>

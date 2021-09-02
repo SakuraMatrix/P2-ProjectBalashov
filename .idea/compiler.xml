@@ -12,18 +12,11 @@
         <module name="eureka" />
         <module name="Taryn" />
         <module name="Lane" />
-<<<<<<< HEAD
-        <module name="Ted" />
-        <module name="webclient" />
-        <module name="microservice-sezin" />
-=======
         <module name="webflux" />
-        <module name="html" />
         <module name="demo" />
-        <module name="gateway" />
         <module name="microservice-sezin" />
+        <module name="gateway" />
         <module name="P2-ProjectBalashov" />
->>>>>>> 55ac6b7865a8e9454d89dab85c7ee1d3d005184e
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -33,29 +26,16 @@
       <module name="html" target="11" />
       <module name="Lane" target="11" />
       <module name="microservice-sezin" target="16" />
-<<<<<<< HEAD
-      <module name="p2-ProjectBalashov" target="16" />
-      <module name="P2-ProjectBalashov" target="15" />
-      <module name="Ted" target="11" />
-      <module name="webclient" target="11" />
-=======
       <module name="P2-ProjectBalashov" target="11" />
       <module name="Taryn" target="16" />
       <module name="Ted" target="11" />
       <module name="webclient" target="11" />
       <module name="webflux" target="1.8" />
->>>>>>> 55ac6b7865a8e9454d89dab85c7ee1d3d005184e
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Lane" options="-parameters" />
-<<<<<<< HEAD
-      <module name="Ted" options="-parameters" />
-      <module name="microservice-sezin" options="-parameters" />
-      <module name="p2-ProjectBalashov" options="-parameters" />
-      <module name="webclient" options="-parameters" />
-=======
       <module name="P2-ProjectBalashov" options="-parameters" />
       <module name="Taryn" options="-parameters" />
       <module name="Ted" options="-parameters" />
@@ -63,9 +43,9 @@
       <module name="eureka" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="html" options="-parameters" />
+      <module name="microservice-sezin" options="-parameters" />
       <module name="webclient" options="-parameters" />
       <module name="webflux" options="-parameters" />
->>>>>>> 55ac6b7865a8e9454d89dab85c7ee1d3d005184e
     </option>
   </component>
 </project>
