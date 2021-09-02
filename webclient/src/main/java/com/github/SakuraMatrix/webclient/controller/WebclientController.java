@@ -75,8 +75,8 @@ public class WebclientController {
 
   //Orders mapping
   @GetMapping("/orders/{customer_id}")
-  public Flux<Orders> findByOrderId(@PathVariable int customer_id) {
-    return webclientService.findByOrderId(customer_id);
+  public Flux<Orders> findById(@PathVariable int customer_id) {
+    return webclientService.findById(customer_id);
   }
 
   @GetMapping("/orders/all")
@@ -94,9 +94,9 @@ public class WebclientController {
     return webclientService.updateById(customer_id, orders);
   }
 
-  @DeleteMapping("/orders/{customer_id}")
-  public void deleteById(@PathVariable int customer_id) {
-    webclientService.deleteById(customer_id);
+  @DeleteMapping("/orders/{orderId}")
+  public void deleteByOrderId(@PathVariable int orderId) {
+    webclientService.deleteByOrderId(orderId);
   }
 
   //Customers Mapping

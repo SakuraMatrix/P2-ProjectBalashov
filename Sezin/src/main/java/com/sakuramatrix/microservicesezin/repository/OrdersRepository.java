@@ -14,7 +14,7 @@ public interface OrdersRepository extends ReactiveCassandraRepository <Orders, I
 
 
     @AllowFiltering
-    Flux<Orders> deleteByOrderId (int order_id);
+    Flux<Orders> deleteByOrderId (int orderId);
 
 
 

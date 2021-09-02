@@ -51,10 +51,10 @@ public class OrdersController {
         return ordersService.updateById (customer_id, orders);
     }
 
-    @DeleteMapping("/{order_id}")
-    public void deleteByOrderId (@PathVariable int order_id) {
+    @DeleteMapping("/{orderId}")
+    public void deleteByOrderId (@PathVariable int orderId) {
         log.info("Deleting an order by order id ");
-        ordersService.deleteByOrderId (order_id);
+        ordersService.deleteByOrderId (orderId);
 
     }
 }
