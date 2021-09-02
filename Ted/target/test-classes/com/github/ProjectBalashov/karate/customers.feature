@@ -1,28 +1,26 @@
 Feature: CustomersTest
 
-  Background:
-    * url 'http://localhost:8086'
-    * def first = response[0]
-
   Scenario: Get all customers
+    Given url 'http://localhost:8080'
     When method GET
     Then status 200
 
   Scenario: Get customer by id
-    Given path first.id
+    Given url 'http://localhost:8086/{id}'
     When method GET
     Then status 200
 
   Scenario: Create customer
+    Given url 'http://localhost:8086'
     When method POST
     Then status 200
 
   Scenario: Deposit
-    Given path 'deposit', first.customer
+    Given url 'http://localhost:8086/deposit/{customer}'
     When method PUT
     Then status 200
 
   Scenario: Withdraw
-    Given path 'withdraw', first.customer
+    Given url 'http://localhost:8086/withdraw/{customer}'
     When method PUT
     Then status 200
