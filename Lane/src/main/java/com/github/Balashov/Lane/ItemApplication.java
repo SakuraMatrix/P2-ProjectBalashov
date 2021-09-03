@@ -18,7 +18,6 @@ public class ItemApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-
 		// save list Customers
 		controller.itemService.generate().subscribe(x -> System.out.println(">> Generated Row: " + x));
 	}
