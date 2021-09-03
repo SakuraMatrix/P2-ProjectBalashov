@@ -21,13 +21,13 @@ Sci-Fi is an ecommerce application which sells science-fiction themed items.
   ```PUT /orders/update/{customer_id}```
 * Remove an order from their cart.
   ```DELETE /orders/{order_id}```
-* Set up and view their account balance.
+* Set up an account.
   ```POST /customers```
 * View their account balance.
   ```GET /customers/{id}```
-* Deposit from their account balance.
+* Deposit to their account.
   ```PUT /customers/deposit/{customer}```
-* Withdraw from their account balance.
+* Withdraw from their account.
   ```PUT /customers/withdraw/{customer}```
 
 ## Item Categories
